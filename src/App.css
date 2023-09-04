@@ -22,11 +22,29 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.App-letra {
+  color: white;
+ font-size: medium;
+ margin-right: 77%;
+ margin-top: -43%;
 }
+
+.App-container {
+  font-size: 60%;
+  margin-right:35%;
+  margin-top: 1%;
+}
+
+
+.App-coluna {
+  flex-direction: column;
+  margin-top: -37%;
+  margin-right: 80%;
+}
+
 
 @keyframes App-logo-spin {
   from {
