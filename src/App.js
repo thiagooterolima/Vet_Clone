@@ -1,9 +1,10 @@
 import './App.css';
 import {useState} from 'react';
+import Tela2 from './componentes/tela2';
 
 
 function App() {
-  const options =[
+/*  const options =[
     {value: '', text: 'Escolha o Sexo', disabled: true},
     {value:'sexoM' ,text: 'Masculino'},
     {value:'sexoF' ,text: 'Feminino'},
@@ -50,10 +51,12 @@ function App() {
 
   const optionStyle = {
     fontSize: '16px', 
-  };
+  };    */
 
  
   return (
+    <Tela2/>
+    /*
     <div className="App">
       <header className="App-header">
 
@@ -105,7 +108,7 @@ function App() {
       </h>
        
       </header>
-    </div>
+    </div>   */
   );
 }
 
