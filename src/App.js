@@ -1,5 +1,3 @@
-import './App.css';
-import {useState} from 'react';
 import Tela2 from './componentes/tela2';
 
 

@@ -1,8 +1,32 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-}
-
-
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    flex-direction: column;
+  }
+  
+  .App-letra {
+    color: white;
+   font-size: medium;
+   margin-right: 77%;
+   margin-top: -43%;
+  }
+  
+  .App-container {
+    font-size: 60%;
+    margin-right:35%;
+    margin-top: 1%;
+  }
+  
+  
+  .App-coluna {
+    flex-direction: column;
+    margin-top: -37%;
+    margin-right: 80%;
+  }
 

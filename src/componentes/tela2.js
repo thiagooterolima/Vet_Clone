@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./tela2.css";
 
 
 
@@ -40,11 +41,11 @@ function Tela2() {
     
     
       const selectStyle = {
-        fontSize: '20px',
+        fontSize: '16px',
         float : 'left',
         marginLeft:'12px',
         marginTop:'12px',
-        width: '225px', 
+        width: '180px', 
     
     
       };
