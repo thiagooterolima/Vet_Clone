@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;     
+}
+
+.backgroundImagem {
+    background-image: url(/public/bg-desktop.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }   
+
+header {
+    height: 500px;
+    border: 1px solid #9c91e4;
+    margin: 50px;
+    width: 100% absolute;
+    
+}
+
+.paciente {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.DadosDoAnimal {
+    flex-direction: row;
+}
+
+.fonte {
+    color: white;
+    padding-top: 8px; /*gambiarra */
+    text-align: center;
+}
+
+.dropbox {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    
+}

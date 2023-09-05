@@ -1,51 +1,57 @@
 /* Inicio do css da tela */
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  }
+
 .backgroundImagem {
   background-image: url(/public/bg-desktop.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
+  
 }
 
-.App-header {
-    /*background-color: #282c34; */
-    
-    min-height: 100vh;
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    
-    
+header {
+    /*background-color: #282c34; */  
+    height: 600px;
+    display: flex;   
+    color: white;  
+    background-color: blueviolet;  
+    padding: 20px;
+    width: 300px;
   }
 
-  
-  .App-letra {
+   
+  .App-letra { /* somente letra */
     color: white;
    font-size: medium;
    margin-right: 77%;
-   margin-top: -43%;
-  }
   
-  .App-container {
+  }
+  /*
+  .App-container {  
     font-size: 60%;
     margin-right:35%;
-    margin-top: 1%;
-  }
+    width: 30px;
+    height: 30px;
+  } */
   
   
-  .App-coluna {
-  
-    margin-top: -37%;
-    margin-right: 80%;
-  }
-
+ 
+ 
   .Nome_Animal{
     flex-direction: row;
   }
 
+ 
+
 /* fim do css da tela */
 
-
+main {
+  background-color: aquamarine;
+  height: 200px;
+  width: 100%;
+}
