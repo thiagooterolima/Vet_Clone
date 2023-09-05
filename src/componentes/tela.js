@@ -56,14 +56,22 @@ function Tela() {
 
       return (
         <div className="App">
+          
         <header className="App-header">
   
-        <h className="App-coluna">
-          <h className="App-letra">
+        <div className="App-coluna">
+
+          <label className="App-letra">
             Paciente
-          </h>
-            <input className="App-container"
+          </label>
+
+        <div className="Nome_Animal">
+
+          <label> Nome Do Animal </label>
+            <input
              type="text" placeholder = "Nome Do Animal" />
+
+         </div>
   
             <input className="App-container"
              type="text" placeholder = "Nome Do Proprietario" />
@@ -101,12 +109,7 @@ function Tela() {
           ))}
         </select>
                    
-  
-  
-  
-  
-        </h>
-         
+         </div>
         </header>
       </div>
       )
