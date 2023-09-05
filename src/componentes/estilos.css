@@ -1,5 +1,15 @@
+/* Inicio do css da tela */
+.backgroundImagem {
+  background-image: url(/public/bg-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
 .App-header {
-    background-color: #282c34;
+    /*background-color: #282c34; */
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -8,7 +18,9 @@
     font-size: calc(10px + 2vmin);
     color: white;
     flex-direction: column;
+    
   }
+
   
   .App-letra {
     color: white;
@@ -29,4 +41,7 @@
     margin-top: -37%;
     margin-right: 80%;
   }
+
+/* fim do css da tela */
+
 

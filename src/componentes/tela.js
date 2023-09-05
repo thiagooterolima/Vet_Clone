@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import "./tela2.css";
+import "./estilos.css";
 
 
 
-function Tela2() {
+function Tela() {
     const options =[
         {value: '', text: 'Escolha o Sexo', disabled: true},
         {value:'sexoM' ,text: 'Masculino'},
@@ -113,4 +113,4 @@ function Tela2() {
 }
 
 
-export default Tela2;
+export default Tela;
