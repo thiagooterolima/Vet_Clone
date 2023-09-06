@@ -16,6 +16,8 @@ function Tela() {
     { value: 'V1', text: 'Joao' },
     { value: 'V2', text: 'Marcia' },
     { value: 'V3', text: 'Pedro' },
+    { value: 'V4', text: 'Giovana Peregine'},
+    { value: 'V5', text: 'Outro'},
   ];
 
 
@@ -60,25 +62,25 @@ function Tela() {
 
 
 
-        <div><h2 className="paciente">Paciente</h2></div>
+        <div><h2 className="paciente">PACIENTE</h2></div>
         <section>
         <div className="DadosDoAnimal">
-          <label className="fonte"> Nome Do Animal </label>
+          <label className="fonte"> Nome Do Animal:</label>
           <input className="letra" type="text" placeholder="Digite o nome do animal" />
         </div>
 
         <div className="DadosDoAnimal">
-          <label className="fonte">Nome do Proprietario</label>
+          <label className="fonte">Nome do Proprietario:</label>
           <input className="letra" type="text" placeholder="Digite o nome do proprietario" />
         </div>
 
         <div className="DadosDoAnimal">
-          <label className="fonte">Idade</label>  
+          <label className="fonte">Idade:</label>  
         <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
         </div>
 
         <div className="dropbox">
-          <label className="fonte">Sexo</label>
+          <label className="fonte2">Sexo:</label>
         <select value={selected} onChange={handleChange} style={selectStyle}>
           {options.map(option => (
             <option
@@ -96,7 +98,7 @@ function Tela() {
 
 
         <div className="dropbox"> 
-          <label className="fonte">Veterinario</label>
+          <label className="fonte2">Veterinario:</label>
         <select value={selectedV} onChange={handleChangeV} style={selectStyle}>
           {optionsV.map(option => (
             <option

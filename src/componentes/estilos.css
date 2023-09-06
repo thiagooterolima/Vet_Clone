@@ -1,57 +1,42 @@
-/* Inicio do css da tela */
-*{
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  }
+/* Estilização para o layout dos elementos */
 
-.backgroundImagem {
-  background-image: url(/public/bg-desktop.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  
+
+
+.paciente {
+  text-align: center;
+  font-size: 24px; /* Tamanho da fonte desejado para o título */
 }
 
-header {
-    /*background-color: #282c34; */  
-    height: 600px;
-    display: flex;   
-    color: white;  
-    background-color: blueviolet;  
-    padding: 20px;
-    width: 300px;
-  }
+/* Estilização para os elementos do formulário */
+.DadosDoAnimal {
+  display: flex;
+  align-items: center;
+  margin: 10px 0; /* Espaçamento vertical entre os elementos */
+}
 
-   
-  .App-letra { /* somente letra */
-    color: white;
-   font-size: medium;
-   margin-right: 77%;
-  
-  }
-  /*
-  .App-container {  
-    font-size: 60%;
-    margin-right:35%;
-    width: 30px;
-    height: 30px;
-  } */
-  
-  
- 
- 
-  .Nome_Animal{
-    flex-direction: row;
-  }
+.fonte {
+  width: 200px; /* Largura do rótulo (label) */
+  text-align: right; /* Alinha o texto do rótulo à direita */
+  padding-right: 10px; /* Espaçamento à direita do rótulo */
+  font-size: 16px; /* Tamanho da fonte do rótulo */
+}
 
- 
+.letra {
+  width: 100%; /* Ocupa toda a largura restante */
+  padding: 5px;
+  font-size: 16px; /* Tamanho da fonte do input */
+}
 
-/* fim do css da tela */
+/* Estilização para os selects (dropdowns) */
+.dropbox {
+  display: flex;
+  align-items: center;
+  margin: 10px 0; /* Espaçamento vertical entre os elementos */
+  width: 100%; /* Ocupa toda a largura restante */
+}
 
-main {
-  background-color: aquamarine;
-  height: 200px;
-  width: 100%;
+/* Estilização para os selects (dropdowns) */
+select {
+  width: 100%; /* Ocupa toda a largura restante */
+  font-size: 16px; /* Tamanho da fonte do select */
 }

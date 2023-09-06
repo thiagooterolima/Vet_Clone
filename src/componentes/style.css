@@ -1,45 +1,72 @@
-*{
+* {
     margin: 0;
-    padding: 0; 
-    box-sizing: border-box;     
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .backgroundImagem {
-    background-image: url(/public/bg-desktop.jpg) ;
+    background-image: url(/public/bg-desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     position: absolute;
-  }   
+}
 
 header {
     height: 500px;
     border: 1px solid #9c91e4;
     margin: 50px;
     width: 100% absolute;
+} 
+
+.paciente {
+    font-size: 24px;
+    color: 	#D3D3D3;
+    text-align: center;
+    width: 50%;
     
 }
 
-.paciente {
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
-}
-
 .DadosDoAnimal {
-    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .fonte {
     color: white;
-    padding-top: 8px; /*gambiarra */
+    width: 200px;
+    display: flex;
+    padding-left: 30px;
+}
+
+.fonte2 {
+    color: white;
+    width: 188px;
+    display: flex;
+    padding-left: 30px;
+}
+
+.letra {
     text-align: center;
+    padding-right: 150px;
+    font-size: 16px;
+    
 }
 
 .dropbox {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+        
+}
+
+section {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
-    
+    margin-top: 20px;
+
 }
