@@ -20,6 +20,7 @@ function Tela() {
     { value: 'V5', text: 'Outro'},
   ];
 
+ 
 
 
   const [selected, setSelected] = useState('');
@@ -65,7 +66,7 @@ function Tela() {
         <div><h2 className="paciente">PACIENTE</h2></div>
         <section>
         <div className="DadosDoAnimal">
-          <label className="fonte"> Nome Do Animal:</label>
+          <label className="fonte">Nome Do Animal:</label>
           <input className="letra" type="text" placeholder="Digite o nome do animal" />
         </div>
 
@@ -77,6 +78,11 @@ function Tela() {
         <div className="DadosDoAnimal">
           <label className="fonte">Idade:</label>  
         <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
+        </div>
+
+        <div className="DadosDoAnimal">
+          <label className="fonte">MV:</label>
+          <input className="letra" type="text" placeholder="Digite o mv" />
         </div>
 
         <div className="dropbox">
