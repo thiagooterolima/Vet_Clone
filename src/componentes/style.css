@@ -27,14 +27,15 @@ header {
     font-size: 24px;
     color: 	#D3D3D3;
     text-align: center;
-    width: 50%;
+    width: 30%;
     padding-top: 50px;
 }
 
 .DadosDoAnimal {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 15px;
+    
 }
 
 .fonte {
@@ -46,16 +47,24 @@ header {
 
 .fonte2 {
     color: white;
-    width: 188px;
+    width: 190px;
     display: flex;
-    padding-left: 30px;
+    padding-left: 43px;
+   
     
 }
 
 .letra {
     padding-right: 150px;
     font-size: 16px;
+    width: 24%;
        
+}
+
+ .data{
+    
+    width: 10%;
+
 }
 
 .dropbox {

@@ -41,13 +41,13 @@ function Tela() {
     setSelectedV(event.target.value);
   };
 
-
+  const[date,setData]=useState();
 
   const selectStyle = {
     fontSize: '16px',
     float: 'left',
-    marginLeft: '12px',
-    marginTop: '12px',
+    marginLeft: '24px',
+    marginTop: '7px',
     width: '180px',
 
   };
@@ -56,6 +56,7 @@ function Tela() {
     fontSize: '16px',
   };
 
+  
   return (
     <body className="backgroundImagem">
 
@@ -65,29 +66,35 @@ function Tela() {
 
         <div><h2 className="paciente">PACIENTE</h2></div>
         <section>
+
+        
         <div className="DadosDoAnimal">
-          <label className="fonte">Nome Do Animal:</label>
+         <label className="fonte">Nome Do Animal:</label>
           <input className="letra" type="text" placeholder="Digite o nome do animal" />
         </div>
 
+       
         <div className="DadosDoAnimal">
           <label className="fonte">Nome do Proprietario:</label>
           <input className="letra" type="text" placeholder="Digite o nome do proprietario" />
         </div>
 
+       
         <div className="DadosDoAnimal">
           <label className="fonte">Idade:</label>  
-        <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
+          <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
         </div>
 
+       
         <div className="DadosDoAnimal">
-          <label className="fonte">MV:</label>
-          <input className="letra" type="text" placeholder="Digite o mv" />
+          <label className="fonte">Data da Cirurgia:</label>
+          <input className="data" type = "date" onChange={e=>setData(e.target.value)}/>
         </div>
 
+        
         <div className="dropbox">
-          <label className="fonte2">Sexo:</label>
-        <select value={selected} onChange={handleChange} style={selectStyle}>
+         <label className="fonte2">Sexo:</label>
+         <select value={selected} onChange={handleChange} style={selectStyle}>
           {options.map(option => (
             <option
               disabled={option.disabled}
@@ -103,9 +110,10 @@ function Tela() {
         </div>
 
 
+        
         <div className="dropbox"> 
-          <label className="fonte2">Veterinario:</label>
-        <select value={selectedV} onChange={handleChangeV} style={selectStyle}>
+         <label className="fonte2">Veterinario:</label>     
+         <select value={selectedV} onChange={handleChangeV} style={selectStyle}>
           {optionsV.map(option => (
             <option
               disabled={option.disabled}
