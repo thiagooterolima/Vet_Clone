@@ -7,8 +7,8 @@ import "./style.css";
 function Tela() {
   const options = [
     { value: '', text: 'Escolha o Sexo', disabled: true },
-    { value: 'sexoM', text: 'Masculino' },
-    { value: 'sexoF', text: 'Feminino' },
+    { value: 'sexoM', text: 'Macho' },
+    { value: 'sexoF', text: 'Femea' },
   ];
 
   const optionsV = [
@@ -133,9 +133,22 @@ function Tela() {
       </header>
 
       <main>
+            <header className="header1">
+
+              <h2 className="cirurgia"> CIRURGIAS</h2>
+
+            </header>
 
       </main>
+
+      
+
     </body>
+
+  
+
+
+
   )
 }
 
