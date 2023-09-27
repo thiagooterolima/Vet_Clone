@@ -6,13 +6,13 @@ import "./style.css";
 
 function Tela() {
   const options = [
-    { value: '', text: 'Escolha o Sexo', disabled: true },
+    { value: '', text: 'Selecione o sexo', disabled: true },
     { value: 'sexoM', text: 'Macho' },
     { value: 'sexoF', text: 'Femea' },
   ];
 
   const optionsV = [
-    { value: '', text: 'Escolha o Veterinario', disabled: true },
+    { value: '', text: 'Selecione o Veterinario', disabled: true },
     { value: 'V1', text: 'Joao' },
     { value: 'V2', text: 'Marcia' },
     { value: 'V3', text: 'Pedro' },
@@ -64,7 +64,7 @@ function Tela() {
 
       <div className="container1">
 
-        <div><h2 className="paciente">PACIENTE</h2></div>
+        <div><h2 className="paciente">INDENTIFICAÇÃO PACIENTE</h2></div>
         <section>
 
         
@@ -75,19 +75,19 @@ function Tela() {
 
        
         <div className="DadosDoAnimal">
-          <label className="fonte">Nome do Proprietario:</label>
-          <input className="letra" type="text" placeholder="Digite o nome do proprietario" />
+          <label className="fonte">Espécie:</label>
+          <input className="letra" type="text" placeholder="Digite a espécie do animal" />
         </div>
 
        
         <div className="DadosDoAnimal">
-          <label className="fonte">Idade:</label>  
-          <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
+          <label className="fonte">Raça:</label>  
+          <input className="letra" type="text"  placeholder="Digite a raça do animal" />
         </div>
 
        
         <div className="DadosDoAnimal">
-          <label className="fonte">Data da Cirurgia:</label>
+          <label className="fonte">Data de nascimento:</label>
           <input className="data" type = "date" onChange={e=>setData(e.target.value)}/>
         </div>
 
@@ -110,7 +110,7 @@ function Tela() {
         </div>
 
 
-        
+        {/*}
         <div className="dropbox"> 
          <label className="fonte2">Veterinario:</label>     
          <select value={selectedV} onChange={handleChangeV} style={selectStyle}>
@@ -127,40 +127,42 @@ function Tela() {
           ))}
         </select>
         </div>   
-
+          */}
 
         
 
         </section>      
 
-        </div> {/*aqui finalixa o container1 */}
+        </div> {/*aqui finaliZa o container1 */}
+
+
 
 
         <div className="container2">
-        <div><h2 className="paciente">PACIENTE</h2></div>
+        <div><h2 className="paciente">INDENTIFICAÇÃO RESPONSÁVEL</h2></div>
         <section>
 
         
         <div className="DadosDoAnimal">
-         <label className="fonte">Nome Do Animal:</label>
+         <label className="fonteContainer2">Nome do responsável:</label>
           <input className="letra" type="text" placeholder="Digite o nome do animal" />
         </div>
 
        
         <div className="DadosDoAnimal">
-          <label className="fonte">Nome do Proprietario:</label>
+          <label className="fonteContainer2">Nome do Proprietario:</label>
           <input className="letra" type="text" placeholder="Digite o nome do proprietario" />
         </div>
 
        
         <div className="DadosDoAnimal">
-          <label className="fonte">Idade:</label>  
+          <label className="fonteContainer2">Idade:</label>  
           <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
         </div>
 
        
         <div className="DadosDoAnimal">
-          <label className="fonte">Data da Cirurgia:</label>
+          <label className="fonteContainer2">Data da Cirurgia:</label>
           <input className="data" type = "date" onChange={e=>setData(e.target.value)}/>
         </div>
 
@@ -182,7 +184,7 @@ function Tela() {
         </select>
         </div>
 
-
+{/*
         
         <div className="dropbox"> 
          <label className="fonte2">Veterinario:</label>     
@@ -197,12 +199,12 @@ function Tela() {
             >
               {option.text}
             </option>
-          ))}
+          ))}   
         </select>
         </div>   
 
 
-        
+          */}
 
         </section>      
 

@@ -41,14 +41,15 @@ header {
     color: white;
     width: 200px;
     display: flex;
-    padding-left: 30px;
+    padding-left: 60px;
+    
 }
 
 .fonte2 {
     color: white;
     width: 190px;
     display: flex;
-    padding-left: 43px;
+    padding-left: 76px;
    
     
 }
@@ -81,14 +82,22 @@ section {
     height: 100%;
     flex-direction: column;
     
+    
 }
 
 .container2 {
-    
     width: 50%;
     float: right;
-    
+    display: flex;
     height: 100%;
+    flex-direction: column;
+}
+
+.fonteContainer2 {
+    color: white;
+    width: 300px;
+    display: flex;
+    padding-left: 60px;
 }
 
 
