@@ -128,16 +128,21 @@ function Tela() {
         </select>
         </div>   
 
+
+        <div className="ladoDireito">
+
+        </div>
+
         </section>      
 
       </header>
 
       <main>
-            <header className="header1">
+            <div className="containerCirurgia">
 
               <h2 className="cirurgia"> CIRURGIAS</h2>
 
-            </header>
+            </div>
 
       </main>
 

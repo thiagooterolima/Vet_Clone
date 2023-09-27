@@ -11,7 +11,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 120vh;
+    height: 100% absolute;
     position: absolute;
 }
 
@@ -84,7 +84,7 @@ section {
 
 /* CSS PARA OS CAMPOS DE CIRURGIAS */
 
-.header1{
+.containerCirurgia {
 
     height: 550px;
     border: 1px solid #9c91e4; 
