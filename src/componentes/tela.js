@@ -62,7 +62,7 @@ function Tela() {
 
       <header>
 
-
+      <div className="container1">
 
         <div><h2 className="paciente">PACIENTE</h2></div>
         <section>
@@ -129,11 +129,84 @@ function Tela() {
         </div>   
 
 
-        <div className="ladoDireito">
-
-        </div>
+        
 
         </section>      
+
+        </div> {/*aqui finalixa o container1 */}
+
+
+        <div className="container2">
+        <div><h2 className="paciente">PACIENTE</h2></div>
+        <section>
+
+        
+        <div className="DadosDoAnimal">
+         <label className="fonte">Nome Do Animal:</label>
+          <input className="letra" type="text" placeholder="Digite o nome do animal" />
+        </div>
+
+       
+        <div className="DadosDoAnimal">
+          <label className="fonte">Nome do Proprietario:</label>
+          <input className="letra" type="text" placeholder="Digite o nome do proprietario" />
+        </div>
+
+       
+        <div className="DadosDoAnimal">
+          <label className="fonte">Idade:</label>  
+          <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
+        </div>
+
+       
+        <div className="DadosDoAnimal">
+          <label className="fonte">Data da Cirurgia:</label>
+          <input className="data" type = "date" onChange={e=>setData(e.target.value)}/>
+        </div>
+
+        
+        <div className="dropbox">
+         <label className="fonte2">Sexo:</label>
+         <select value={selected} onChange={handleChange} style={selectStyle}>
+          {options.map(option => (
+            <option
+              disabled={option.disabled}
+              key={option.value}
+              value={option.value}
+              style={optionStyle}
+
+            >
+              {option.text}
+            </option>
+          ))}
+        </select>
+        </div>
+
+
+        
+        <div className="dropbox"> 
+         <label className="fonte2">Veterinario:</label>     
+         <select value={selectedV} onChange={handleChangeV} style={selectStyle}>
+          {optionsV.map(option => (
+            <option
+              disabled={option.disabled}
+              key={option.value}
+              value={option.value}
+              style={optionStyle}
+
+            >
+              {option.text}
+            </option>
+          ))}
+        </select>
+        </div>   
+
+
+        
+
+        </section>      
+
+        </div> {/*aqui finaliza o container2 */}
 
       </header>
 
