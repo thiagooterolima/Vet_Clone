@@ -11,6 +11,13 @@ function Tela() {
     { value: 'sexoF', text: 'Femea' },
   ];
 
+  const optionsRes = [
+    { value: '', text: 'Selecione o sexo', disabled: true },
+    { value: 'sexoM', text: 'Homen' },
+    { value: 'sexoF', text: 'Mulher' },
+  ];
+
+
   const optionsV = [
     { value: '', text: 'Selecione o Veterinario', disabled: true },
     { value: 'V1', text: 'Joao' },
@@ -49,12 +56,21 @@ function Tela() {
     marginLeft: '24px',
     marginTop: '7px',
     width: '180px',
-
   };
 
   const optionStyle = {
     fontSize: '16px',
   };
+
+  const selectStyleRes = {
+    fontSize: '16px',
+    float: 'left',
+    marginLeft: '105px',
+    marginTop: '7px',
+    width: '303px',
+  };
+
+
 
   
   return (
@@ -145,32 +161,60 @@ function Tela() {
         
         <div className="DadosDoAnimal">
          <label className="fonteContainer2">Nome do responsável:</label>
-          <input className="letra" type="text" placeholder="Digite o nome do animal" />
+          <input className="letra" type="text" placeholder="Digite o nome do responsavel" />
         </div>
 
        
         <div className="DadosDoAnimal">
-          <label className="fonteContainer2">Nome do Proprietario:</label>
-          <input className="letra" type="text" placeholder="Digite o nome do proprietario" />
+          <label className="fonteContainer2">Nacionalidade:</label>
+          <input className="letra" type="text" placeholder="Digite a naciolidade do responsavel" />
         </div>
 
-       
+        <div className="DadosDoAnimal">
+          <label className="fonteContainer2">CPF Do Responsavel:</label>
+          <input className="letra" type="text" placeholder="Digite o CPF do responsavel" />
+        </div>
+
+        <div className="DadosDoAnimal">
+          <label className="fonteContainer2">Telefone Para Contado:</label>
+          <input className="letra" type="text" placeholder="Digite o Telefone do responsavel" />
+        </div>
+
+        <div className="DadosDoAnimal">
+          <label className="fonteContainer2">CEP:</label>
+          <input className="letra" type="text" placeholder="Digite o CEP da Cidade do responsavel" />
+        </div>
+
+        <div className="DadosDoAnimal">
+          <label className="fonteContainer2">Endereço:</label>
+          <input className="letra" type="text" placeholder="Digite o Endereço do responsavel" />
+        </div>
+
+        <div className="DadosDoAnimal">
+          <label className="fonteContainer2">Cidade:</label>
+          <input className="letra" type="text" placeholder="Digite a Cidade do responsavel" />
+        </div>
+
+       {/*
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">Idade:</label>  
           <input className="letra" type="number" min="0" placeholder="Digite a idade do animal" />
         </div>
+        */}
 
-       
+       {/*
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">Data da Cirurgia:</label>
           <input className="data" type = "date" onChange={e=>setData(e.target.value)}/>
         </div>
+      */}
+
 
         
         <div className="dropbox">
          <label className="fonte2">Sexo:</label>
-         <select value={selected} onChange={handleChange} style={selectStyle}>
-          {options.map(option => (
+         <select value={selected} onChange={handleChange} style={selectStyleRes}>
+          {optionsRes.map(option => (
             <option
               disabled={option.disabled}
               key={option.value}
@@ -209,6 +253,33 @@ function Tela() {
         </section>      
 
         </div> {/*aqui finaliza o container2 */}
+
+         <div className="container3">
+          <div><h2 className="local">IDENTIFICAÇÃO MÉDICO VETERINÁRIO / ESTABELECIMENTO </h2></div>
+
+          <section>
+
+           <div className="DadosDoAnimal">
+             <label className="fonteContainer3">Nome do Estabelecimento:</label>
+             <input className="letra1" type="text" placeholder="Digite o Estalecimento" />
+           </div>
+
+           <div className="DadosDoAnimal">
+             <label className="fonteContainer3">Data da Cirurgia:</label>
+             <input className="data1" type = "date" onChange={e=>setData(e.target.value)}/>
+           </div>
+
+
+
+
+
+
+          </section>
+          
+          
+          </div>   
+
+
 
       </header>
 
