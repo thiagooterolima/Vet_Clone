@@ -16,7 +16,7 @@
 }
 
 header {
-    height: 940px;
+    height: 850px;
     border: 1px solid #9c91e4; 
     margin: 50px;
     width: 100% absolute;
@@ -94,9 +94,10 @@ section {
 .container3 {
     float: left;
     display: flex;
-    height: 20%;
+    height: 50%;
     flex-direction: column;
     padding-top: 2%;
+
 }
 
 .local{
@@ -151,9 +152,6 @@ section {
     justify-content: center; 
     display: flex;
 
-  
-
-   
 } 
 
 .cirurgia{
@@ -162,6 +160,20 @@ section {
     padding-top: 3%;
     
 }
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+
+  }
+  
+  .select-dropdown {
+    display: flex;
+    width: 50%;
+    left: 30%;
+  }
+
+
 
 
 

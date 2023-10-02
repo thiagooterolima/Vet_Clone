@@ -5,6 +5,53 @@ import "./style.css";
 
 
 function Tela() {
+
+  const [numCirurgias, setNumCirurgias] = useState(0);
+  const [cirurgias, setCirurgias] = useState(new Array(3).fill(''));
+  const [opcoesSelecionadas, setOpcoesSelecionadas] = useState(new Array(3).fill(''));
+
+  const handleCirurgiaInputChange = (e) => {
+    
+    const num = Math.min(parseInt(e.target.value, 10), 3);
+    if (!isNaN(num) && num >= 0) {
+      setNumCirurgias(num);
+      setCirurgias(new Array(num).fill(''));
+      setOpcoesSelecionadas(new Array(num).fill(''));
+    } else {
+      setNumCirurgias(0);
+      setCirurgias(new Array(3).fill(''));
+      setOpcoesSelecionadas(new Array(3).fill(''));
+    }
+    
+  };
+
+  const handleCirurgiaChange = (index, e) => {
+    const newCirurgias = [...cirurgias];
+    newCirurgias[index] = e.target.value;
+    setCirurgias(newCirurgias);
+
+    const newOpcoesSelecionadas = [...opcoesSelecionadas];
+    newOpcoesSelecionadas[index] = e.target.value;
+    setOpcoesSelecionadas(newOpcoesSelecionadas);
+  };
+
+
+  const cirurgiaDropdowns = Array.from({ length: numCirurgias }, (_, index) => (
+    <div className="cirurgia-dropdown" key={index}>
+      <label className="fonteContainer3">{`Cirurgião ${index + 1}`}</label>
+      <select
+        className="select-dropdown"
+        value={cirurgias[index]}
+        onChange={(e) => handleCirurgiaChange(index, e)}
+      >
+        <option value="">Selecione o Cirurgião</option>
+        <option value="Maria" disabled={opcoesSelecionadas.includes("Maria")}>Maria</option>
+        <option value="Paulo" disabled={opcoesSelecionadas.includes("Paulo")}>Paulo</option>
+        <option value="João" disabled={opcoesSelecionadas.includes("João")}>João</option>
+      </select>
+    </div>
+  ));
+
   const options = [
     { value: '', text: 'Selecione o sexo', disabled: true },
     { value: 'sexoM', text: 'Macho' },
@@ -269,10 +316,12 @@ function Tela() {
              <input className="data1" type = "date" onChange={e=>setData(e.target.value)}/>
            </div>
 
+           <div className="DadosDoAnimal">
+            <label className="fonteContainer3">Cirurgião/ Cirurgiões:</label>
+            <input className="letra1" type="number" min="0" max={3}  placeholder="Numero de Cirurgião" onChange={handleCirurgiaInputChange} />
+           </div>
 
-
-
-
+           <div className="dropdown-container">{cirurgiaDropdowns}</div>
 
           </section>
           
