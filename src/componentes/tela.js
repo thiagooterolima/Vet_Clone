@@ -301,7 +301,18 @@ function Tela() {
 
         </div> {/*aqui finaliza o container2 */}
 
-         <div className="container3">
+         
+
+
+
+      </header>
+
+      <main>
+            <div className="containerCirurgia">
+          
+            <div className="mineContainerCirurgia"><h2 className="cirurgia"> CIRURGIAS</h2></div>
+
+              <div className="container3">
           <div><h2 className="local">IDENTIFICAÇÃO MÉDICO VETERINÁRIO / ESTABELECIMENTO </h2></div>
 
           <section>
@@ -327,15 +338,6 @@ function Tela() {
           
           
           </div>   
-
-
-
-      </header>
-
-      <main>
-            <div className="containerCirurgia">
-
-              <h2 className="cirurgia"> CIRURGIAS</h2>
 
             </div>
 
