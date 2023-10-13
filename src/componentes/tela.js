@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./style.css";
-
+import Cirurgias from "./cirurgias"
 
 
 function Tela() {
@@ -310,7 +310,7 @@ function Tela() {
       <main>
             <div className="containerCirurgia">
           
-            <div className="mineContainerCirurgia"><h2 className="cirurgia"> CIRURGIAS</h2></div>
+          
 
               <div className="container3">
           <div><h2 className="local">IDENTIFICAÇÃO MÉDICO VETERINÁRIO / ESTABELECIMENTO </h2></div>
@@ -335,15 +335,22 @@ function Tela() {
            <div className="dropdown-container">{cirurgiaDropdowns}</div>
 
           </section>
+
+
           
-          
+         
           </div>   
+      
+          
 
             </div>
 
-      </main>
+           
+            <Cirurgias/>
 
-      
+      </main>
+  
+
 
     </body>
 
