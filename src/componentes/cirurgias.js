@@ -91,6 +91,12 @@ function Cirurgias() {
   const OlhoAnex=['PALPEBRAIS','CONJUNTIVAIS','ENUCLEAÇÃO','3 GLANDULA PÁLPEBRA','PROPTOSE'];
   const Orelha =['ABLAÇÃO DO CANAL AUDITIVO','OTOHEMATOMA',' PINECTOMIA ']
   const Cav_Ab=['CELIOTOMIA EXPLORATÓRIA','HÉRNIA UMBILICAL','HÉRNIA ABDOMINAL','HÉRNIA INGUINAL','HÉRNIA ESCROTAL','ABDOMINOCENTESE ']
+  const Cav_oral=['BIÓPSIA','MAXILECTOMIA PARCIAL','MANDIBULECTOMIA PARCIAL','MANDIBULECTOMIA ROSTRAL','QUEILOPLASTIA','GLOSSECTOMIA','CORREÇÃO FISSURA PALATINA',
+  'CORREÇÃO FISSURAS ORONASAIS','EXCISÃO DE TUMORES ORAIS','CORREÇÃO MUCOCELE SALIVAR','CORREÇÃO SIALOCELE','MARSUPIALIZAÇÃO DA RÂNULA']
+  const Esofago=['ESOFAGECTOMIA PARCIAL','INTUSSUSCEPÇÃO GASTROESOFÁGICA']
+  const Estomago=['GASTROJEJUNOSTOMIA','CORREÇÃO TORÇÃO VÔLVULO ´GASTRICA']
+  const Intestino=['ETEROROMIA','ENTERECTOMIA','ENTEROPEXIA','PLICATURA INTESTINAL', 'COLOPEXIA','COLOSTOMIA', 'COLECTOMIA']
+  const Par_reto_anus=['RESSECÇÃO RETAL','SACULECTOMIA ANAL','CORREÇÃO HÉRNIA PERINEAL', 'CORREÇÃO PROLAPSO RETAL']
 
 
  
@@ -131,10 +137,54 @@ function Cirurgias() {
           options={Cav_Ab}
         />
 
-        
+               
 
         </div>
 
+{/** adicionei um codigo aqui em baixo. Ass Thiago Amim */} 
+        <div className='grupo2'>
+        
+        <ExpansiveButton
+        onOptionSelect={handleOptionSelect}
+        buttonText="CAVIDADE ORAL"
+        selectedOptions={selectedOptions}
+        options={Cav_oral}
+        />
+
+        <ExpansiveButton
+        onOptionSelect={handleOptionSelect}
+        buttonText="ESÕFAGO"
+        selectedOptions={selectedOptions}
+        options={Esofago}
+        />
+
+        <ExpansiveButton
+        onOptionSelect={handleOptionSelect}
+        buttonText="ESTÔMAGO"
+        selectedOptions={selectedOptions}
+        options={Estomago}
+        />
+
+        <ExpansiveButton
+        onOptionSelect={handleOptionSelect}
+        buttonText="INTESTINO"
+        selectedOptions={selectedOptions}
+        options={Intestino}
+        />
+
+        
+
+      </div> {/* fim do codigo do grupo 2 */ }
+
+      <div className='grupo3'>
+        <ExpansiveButton
+        onOptionSelect={handleOptionSelect}
+        buttonText="PERÍNEO,RETO E ÂNUS"
+        selectedOptions={selectedOptions}
+        options={Par_reto_anus}
+        />
+      </div> {/*o codigo que adicionei termina aqui */}
+      
          
 
       </div>

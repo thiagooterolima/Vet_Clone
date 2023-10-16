@@ -177,7 +177,7 @@ section {
   }
 
 main {
-    height: 1000px;
+    height: 1300px;
     border: 1px solid #9c91e4; 
     margin: 50px;
     width: 100% absolute;
@@ -245,5 +245,17 @@ main {
 
   .grupo2{
     flex-direction: row;
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }  
+
+  .grupo3{
+    flex-direction: row;
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
