@@ -10,16 +10,17 @@ function ExpansiveButton({ onOptionSelect, buttonText, selectedOptions, options 
   };
 
   return (
-    <div style={{ display: 'inline-block', margin: '5px'}}>
+    <div style={{ display: 'inline-block', margin: '3px'}}>
       <button
         style={{
-          fontSize: '23px', // Tamanho da fonte
+          fontSize: '16px', // Tamanho da fonte
           padding: '10px 10px', // Espaçamento interno
-          backgroundColor: isExpanded ? '#708090' : '#708090', // Cor de fundo
+          backgroundColor: isExpanded ? 'GhostWhite' : 'GhostWhite', // Cor de fundo
           color: 'black', // Cor do texto
           border: 'none', // Remover borda
           cursor: 'pointer', // Cursor ao passar o mouse
-          width:'15vh',
+          width:'23vh',
+          height:'70px'
         }}
         onClick={() => {
           setIsExpanded(!isExpanded);
@@ -35,13 +36,15 @@ function ExpansiveButton({ onOptionSelect, buttonText, selectedOptions, options 
               onClick={() => handleOptionChange(option)}
               disabled={selectedOptions.includes(buttonText + ' ' + option)}
               style={{
-                fontSize: '18px', // Tamanho da fonte para as opções
+                fontSize: '14px', // Tamanho da fonte para as opções
                 cursor: 'pointer',
-                margin: '5px 0',
+                margin: '8px 0',
                 display: 'block',
-                backgroundColor: selectedOptions.includes(buttonText + ' ' + option) ? '#ddd' : '#708090',
+                backgroundColor: selectedOptions.includes(buttonText + ' ' + option) ? 'Lime' : 'GhostWhite',
                 border: 'none',
                 width:'100%',
+                height:'30px',
+                
                 
               }}
             >
@@ -59,6 +62,7 @@ function SelectedOptionsList({ selectedOptions, onRemoveOption }) {
     <div className='list'>
       <h2>OPÇÕES SELECIONADAS:</h2>
       
+      
       <ul>
         {selectedOptions.map((option, index) => (
           <li key={index}>
@@ -66,6 +70,7 @@ function SelectedOptionsList({ selectedOptions, onRemoveOption }) {
           </li>
         ))}
       </ul>
+      
     </div>
   );
 }
@@ -82,7 +87,12 @@ function Cirurgias() {
     setSelectedOptions(updatedOptions);
   };
 
-  const cabecaOptions = ['Opção 1', 'Opção 2', 'Opção 3'];
+  const Tegu= ['NODULECTOMIA','RECONSTRUTIVAS','ENXERTO'];
+  const OlhoAnex=['PALPEBRAIS','CONJUNTIVAIS','ENUCLEAÇÃO','3 GLANDULA PÁLPEBRA','PROPTOSE'];
+  const Orelha =['ABLAÇÃO DO CANAL AUDITIVO','OTOHEMATOMA',' PINECTOMIA ']
+  const Cav_Ab=['CELIOTOMIA EXPLORATÓRIA','HÉRNIA UMBILICAL','HÉRNIA ABDOMINAL','HÉRNIA INGUINAL','HÉRNIA ESCROTAL','ABDOMINOCENTESE ']
+
+
  
   return (
     <div className='containerCir'>
@@ -95,39 +105,31 @@ function Cirurgias() {
 
         <ExpansiveButton 
           onOptionSelect={handleOptionSelect}
-          buttonText="Cabeça"
+          buttonText="SIS.TEGUMENTAR"
           selectedOptions={selectedOptions}
-          options={cabecaOptions}
+          options={Tegu}
         />
 
-<ExpansiveButton 
+        <ExpansiveButton 
           onOptionSelect={handleOptionSelect}
-          buttonText="Cabeça"
+          buttonText="OLHO E ANEXOS"
           selectedOptions={selectedOptions}
-          options={cabecaOptions}
+          options={OlhoAnex}
         />
 
-<ExpansiveButton 
+        <ExpansiveButton 
           onOptionSelect={handleOptionSelect}
-          buttonText="Cabeça"
+          buttonText="ORELHA"
           selectedOptions={selectedOptions}
-          options={cabecaOptions}
+          options={Orelha}
         />
 
-<ExpansiveButton 
+        <ExpansiveButton 
           onOptionSelect={handleOptionSelect}
-          buttonText="Cabeça"
+          buttonText="CAVIDADE ABDOMINAL "
           selectedOptions={selectedOptions}
-          options={cabecaOptions}
+          options={Cav_Ab}
         />
-
-<ExpansiveButton 
-          onOptionSelect={handleOptionSelect}
-          buttonText="Cabeça"
-          selectedOptions={selectedOptions}
-          options={cabecaOptions}
-        />
-
 
         
 
