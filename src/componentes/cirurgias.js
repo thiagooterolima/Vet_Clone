@@ -42,8 +42,9 @@ function ExpansiveButton({ onOptionSelect, buttonText, selectedOptions, options 
                 display: 'block',
                 backgroundColor: selectedOptions.includes(buttonText + ' ' + option) ? 'Lime' : 'GhostWhite',
                 border: 'none',
-                width:'100%',
-                height:'30px',
+                width:'210px',
+                height:'36px',
+                
                 
                 
               }}
@@ -177,12 +178,15 @@ function Cirurgias() {
       </div> {/* fim do codigo do grupo 2 */ }
 
       <div className='grupo3'>
+
         <ExpansiveButton
         onOptionSelect={handleOptionSelect}
         buttonText="PERÍNEO,RETO E ÂNUS"
         selectedOptions={selectedOptions}
         options={Par_reto_anus}
         />
+
+        
       </div> {/*o codigo que adicionei termina aqui */}
       
          

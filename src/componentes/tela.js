@@ -102,7 +102,8 @@ function Tela() {
     float: 'left',
     marginLeft: '24px',
     marginTop: '7px',
-    width: '180px',
+    width: '34%',
+    
   };
 
   const optionStyle = {
