@@ -23,6 +23,9 @@ function Tela() {
   
   const pdfRef = useRef();
 
+  const [selectedCirurgias, setSelectedCirurgias] = useState([]);
+  let currentPage = 1;
+
   const handleGeneratePDF = () => {
   const pdf = new jsPDF();
    
@@ -51,20 +54,29 @@ function Tela() {
     pdf.text(20, 250, `Numero De Cirurgiao: ${numCirurgias}`);
     pdf.text(20, 260, `Cirurgião / Cirurgiões: ${cirurgias}`);
 
-
-
-
-
-
     
-    {/*
-    pdf.text(65,210,"Assinatura Responsavel")
+    pdf.addPage();
+    currentPage++;
+
+    pdf.text(60, 20, "CIRURGIAS SELECIONADAS");
+    pdf.text(67,210,"Assinatura Responsavel")
     pdf.text(60,220,"________________________")
 
-     */}
+    let startY = 40;
+
+    selectedCirurgias.forEach((cirurgia, index) => {
+      pdf.text(20, startY + index * 10, cirurgia);
+    });
+
+    
+   
+
+     
 
      const fileName = prompt("Digite o nome que O arquivo Sera salvo:") || "formulario";
      pdf.save(`${fileName}.pdf`);
+
+     setSelectedCirurgias([]);
 
   };
 
@@ -455,13 +467,16 @@ function Tela() {
                     
                   <div className="gerarPDF">
 
-                      <button onClick={handleGeneratePDF}>Gerar PDF</button>
+                  <button onClick={handleGeneratePDF}>Gerar PDF</button>
                       <div ref={pdfRef}></div>
 
+                     
                     </div>  
 
            
-            <Cirurgias/>
+            <Cirurgias onGeneratePDF={cirurgias => setSelectedCirurgias(cirurgias)} />
+
+           
 
     
 

@@ -6,7 +6,7 @@ function ExpansiveButton({ onOptionSelect, buttonText, selectedOptions, options 
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleOptionChange = (option) => {
-    onOptionSelect(buttonText + ' ' + option);
+    onOptionSelect(option);
   };
 
   return (
@@ -34,13 +34,13 @@ function ExpansiveButton({ onOptionSelect, buttonText, selectedOptions, options 
             <button
               key={index}
               onClick={() => handleOptionChange(option)}
-              disabled={selectedOptions.includes(buttonText + ' ' + option)}
+              disabled={selectedOptions.includes(option)}
               style={{
                 fontSize: '14px', // Tamanho da fonte para as opções
                 cursor: 'pointer',
                 margin: '8px 0',
                 display: 'block',
-                backgroundColor: selectedOptions.includes(buttonText + ' ' + option) ? 'Lime' : 'GhostWhite',
+                backgroundColor: selectedOptions.includes(option) ? 'Lime' : 'GhostWhite',
                 border: 'none',
                 width:'210px',
                 height:'36px',
@@ -76,16 +76,18 @@ function SelectedOptionsList({ selectedOptions, onRemoveOption }) {
   );
 }
 
-function Cirurgias() {
+function Cirurgias({ onGeneratePDF}) {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionSelect = (option) => {
     setSelectedOptions([...selectedOptions, option]);
+    onGeneratePDF([...selectedOptions, option]);
   };
 
   const handleRemoveOption = (option) => {
     const updatedOptions = selectedOptions.filter((item) => item !== option);
     setSelectedOptions(updatedOptions);
+    onGeneratePDF(updatedOptions);
   };
 
   const Tegu= ['NODULECTOMIA','RECONSTRUTIVAS','ENXERTO'];
