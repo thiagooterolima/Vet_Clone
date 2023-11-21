@@ -1,10 +1,72 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import "./style.css";
 import Cirurgias from "./cirurgias"
+import jsPDF from "jspdf";
 
 
 function Tela() {
+
+  const [NomeAnimal, setNomeAnimal] = useState("");
+  const [Especie, setEspeci] = useState("");
+  const [Raca, setRaca] = useState("");
+
+  const [NomedoResponsavel, setNomeResposanvel] = useState("");
+  const [Nacionalidade, setNacionalidade] = useState("");
+  const [CPF, setCPF] = useState("");
+  const [Telefone, setTelefone] = useState("");
+  const [CEP, setCEP] = useState("");
+  const [Endereco, setEndereco] = useState("");
+  const [Cidade, setCidade] = useState("");
+
+  const [Estabelecimento, setEstabelecimento] = useState("");
+  
+  const pdfRef = useRef();
+
+  const handleGeneratePDF = () => {
+  const pdf = new jsPDF();
+   
+    pdf.text(60,10,"DADOS DO PACIENTE" )
+    pdf.text(20, 30, `Nome do Animal: ${NomeAnimal}`);
+    pdf.text(20, 40, `Espécie: ${Especie}`);
+    pdf.text(20, 50, `Raça: ${Raca}`);
+    pdf.text(20, 60, `Data de Nascimento: ${date}`);
+    pdf.text(20, 70, `Sexo do Animal: ${selected}`);
+
+
+    pdf.text(60,100,"DADOS DO RESPONSAVEL")
+    pdf.text(20, 120, `Nome do Responsável: ${NomedoResponsavel}`);
+    pdf.text(20, 130, `Nacionalidade: ${Nacionalidade}`);
+    pdf.text(20, 140, `CPF: ${CPF}`);
+    pdf.text(20, 150, `Telefone para Contato: ${Telefone}`);
+    pdf.text(20, 160, `CEP: ${CEP}`);
+    pdf.text(20, 170, `Endereço: ${Endereco}`);
+    pdf.text(20, 180, `Cidade: ${Cidade}`);
+    pdf.text(20, 190, `Sexo do Responsável: ${selectedRes}`);
+
+
+    pdf.text(60,210,"DADOS DO ESTABELECIMENTO")
+    pdf.text(20, 230, `Nome do Estabelecimento: ${Estabelecimento}`);
+    pdf.text(20, 240, `Data da Cirurgia: ${date}`);
+    pdf.text(20, 250, `Numero De Cirurgiao: ${numCirurgias}`);
+    pdf.text(20, 260, `Cirurgião / Cirurgiões: ${cirurgias}`);
+
+
+
+
+
+
+    
+    {/*
+    pdf.text(65,210,"Assinatura Responsavel")
+    pdf.text(60,220,"________________________")
+
+     */}
+
+     const fileName = prompt("Digite o nome que O arquivo Sera salvo:") || "formulario";
+     pdf.save(`${fileName}.pdf`);
+
+  };
 
   const [numCirurgias, setNumCirurgias] = useState(0);
   const [cirurgias, setCirurgias] = useState(new Array(3).fill(''));
@@ -54,17 +116,17 @@ function Tela() {
 
   const options = [
     { value: '', text: 'Selecione o sexo', disabled: true },
-    { value: 'sexoM', text: 'Macho' },
-    { value: 'sexoF', text: 'Femea' },
+    { value: 'Macho', text: 'Macho' },
+    { value: 'Femea', text: 'Femea' },
   ];
 
   const optionsRes = [
     { value: '', text: 'Selecione o sexo', disabled: true },
-    { value: 'sexoM', text: 'Homen' },
-    { value: 'sexoF', text: 'Mulher' },
+    { value: 'Homen', text: 'Homen' },
+    { value: 'Mulher', text: 'Mulher' },
   ];
 
-
+{/*
   const optionsV = [
     { value: '', text: 'Selecione o Veterinario', disabled: true },
     { value: 'V1', text: 'Joao' },
@@ -73,6 +135,8 @@ function Tela() {
     { value: 'V4', text: 'Giovana Peregine'},
     { value: 'V5', text: 'Outro'},
   ];
+
+*/}
 
  
 
@@ -86,9 +150,9 @@ function Tela() {
     setSelected(event.target.value);
   };
 
-  const [selectedV, setSelectedV] = useState('');
+  const [selectedRes, setSelectedV] = useState('');
 
-  const handleChangeV = event => {
+  const handleChangeRes = event => {
     console.log('Label ', event.target.selectedOptions[0].label);
     console.log(event.target.value);
 
@@ -134,25 +198,39 @@ function Tela() {
         
         <div className="DadosDoAnimal">
          <label className="fonte">Nome Do Animal:</label>
-          <input className="letra" type="text" placeholder="Digite o nome do animal" />
+          <input className="letra" type="text" placeholder="Digite o nome do animal"
+           value={NomeAnimal}
+           onChange={(e) => setNomeAnimal(e.target.value)}
+          
+          />
         </div>
 
        
         <div className="DadosDoAnimal">
           <label className="fonte">Espécie:</label>
-          <input className="letra" type="text" placeholder="Digite a espécie do animal" />
+          <input className="letra" type="text" placeholder="Digite a espécie do animal"
+           value={Especie}
+           onChange={(e) => setEspeci(e.target.value)}
+          />
         </div>
 
        
         <div className="DadosDoAnimal">
           <label className="fonte">Raça:</label>  
-          <input className="letra" type="text"  placeholder="Digite a raça do animal" />
+          <input className="letra" type="text"  placeholder="Digite a raça do animal"
+           value={Raca}
+           onChange={(e) => setRaca(e.target.value)}
+          />
         </div>
 
        
         <div className="DadosDoAnimal">
           <label className="fonte">Data de nascimento:</label>
-          <input className="data" type = "date" onChange={e=>setData(e.target.value)}/>
+          <input className="data" type = "date"
+          value={date}
+          onChange={(e) => setData(e.target.value)}
+          
+          />
         </div>
 
         
@@ -209,38 +287,64 @@ function Tela() {
         
         <div className="DadosDoAnimal">
          <label className="fonteContainer2">Nome do responsável:</label>
-          <input className="letra" type="text" placeholder="Digite o nome do responsavel" />
+          <input className="letra" type="text" placeholder="Digite o nome do responsavel"
+           value={NomedoResponsavel}
+           onChange={(e) => setNomeResposanvel(e.target.value)}
+          />
         </div>
 
        
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">Nacionalidade:</label>
-          <input className="letra" type="text" placeholder="Digite a naciolidade do responsavel" />
+          <input className="letra" type="text" placeholder="Digite a naciolidade do responsavel"
+           value={Nacionalidade}
+           onChange={(e) => setNacionalidade(e.target.value)}
+
+          />
         </div>
 
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">CPF Do Responsavel:</label>
-          <input className="letra" type="text" placeholder="Digite o CPF do responsavel" />
+          <input className="letra" type="text" placeholder="Digite o CPF do responsavel"
+           value={CPF}
+           onChange={(e) => setCPF(e.target.value)}
+          
+          />
         </div>
 
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">Telefone Para Contado:</label>
-          <input className="letra" type="text" placeholder="Digite o Telefone do responsavel" />
+          <input className="letra" type="text" placeholder="Digite o Telefone do responsavel"
+           value={Telefone}
+           onChange={(e) => setTelefone(e.target.value)}
+          />
         </div>
 
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">CEP:</label>
-          <input className="letra" type="text" placeholder="Digite o CEP da Cidade do responsavel" />
+          <input className="letra" type="text" placeholder="Digite o CEP da Cidade do responsavel"
+           value={CEP}
+           onChange={(e) => setCEP(e.target.value)}
+          
+          />
         </div>
 
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">Endereço:</label>
-          <input className="letra" type="text" placeholder="Digite o Endereço do responsavel" />
+          <input className="letra" type="text" placeholder="Digite o Endereço do responsavel"
+           value={Endereco}
+           onChange={(e) => setEndereco(e.target.value)}
+          
+          />
         </div>
 
         <div className="DadosDoAnimal">
           <label className="fonteContainer2">Cidade:</label>
-          <input className="letra" type="text" placeholder="Digite a Cidade do responsavel" />
+          <input className="letra" type="text" placeholder="Digite a Cidade do responsavel"
+           value={Cidade}
+           onChange={(e) => setCidade(e.target.value)}
+          
+           />
         </div>
 
        {/*
@@ -261,7 +365,7 @@ function Tela() {
         
         <div className="dropbox">
          <label className="fonte2">Sexo:</label>
-         <select value={selected} onChange={handleChange} style={selectStyleRes}>
+         <select value={selectedRes} onChange={handleChangeRes} style={selectStyleRes}>
           {optionsRes.map(option => (
             <option
               disabled={option.disabled}
@@ -320,7 +424,12 @@ function Tela() {
 
            <div className="DadosDoAnimal">
              <label className="fonteContainer3">Nome do Estabelecimento:</label>
-             <input className="letra1" type="text" placeholder="Digite o Estalecimento" />
+             <input className="letra1" type="text" placeholder="Digite o Estalecimento"
+             value={Estabelecimento}
+             onChange={(e) => setEstabelecimento(e.target.value)}
+             
+             
+             />
            </div>
 
            <div className="DadosDoAnimal">
@@ -338,20 +447,27 @@ function Tela() {
           </section>
 
 
-          
          
           </div>   
       
-          
 
             </div>
+                    
+                  <div className="gerarPDF">
+
+                      <button onClick={handleGeneratePDF}>Gerar PDF</button>
+                      <div ref={pdfRef}></div>
+
+                    </div>  
 
            
             <Cirurgias/>
 
+    
+
+
       </main>
   
-
 
     </body>
 

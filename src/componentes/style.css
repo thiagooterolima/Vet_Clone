@@ -167,6 +167,7 @@ section {
     display: flex;
     flex-direction: column;
     padding-left: 2%;
+    margin-bottom: 12%;
 
   }
   
@@ -257,5 +258,18 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .gerarPDF{
+    
+    float: right;
+    margin-top: 10%;
+    margin-right: 5%;
+    width: 10%;
+    height: 10%;
+    
+
+    
+   
   }
 
