@@ -204,7 +204,7 @@ function Tela() {
 
       <div className="container1">
 
-        <div><h2 className="paciente">INDENTIFICAÇÃO PACIENTE</h2></div>
+        <div><h2 className="paciente">IDENTIFICAÇÃO PACIENTE</h2></div>
         <section>
 
         
@@ -293,7 +293,7 @@ function Tela() {
 
 
         <div className="container2">
-        <div><h2 className="paciente">INDENTIFICAÇÃO RESPONSÁVEL</h2></div>
+        <div><h2 className="paciente">IDENTIFICAÇÃO RESPONSÁVEL</h2></div>
         <section>
 
         
